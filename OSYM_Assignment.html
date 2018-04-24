@@ -125,9 +125,6 @@ $(document).ready(function () {
 </div>
 
 
-<ol style="list-style-type: decimal">
-<li>Get the highest <code>max_score</code> programs from each <code>exam_type</code>.</li>
-</ol>
 <pre class="r"><code>load(&quot;C:\\Tool\\osym_data_2017_v2.RData&quot;)
 osym_data_2017 &lt;- 
   osym_data_2017 %&gt;% 
@@ -145,6 +142,9 @@ head(osym_data_2017)</code></pre>
 ## # ... with 8 more variables: general_quota &lt;dbl&gt;, general_placement &lt;dbl&gt;,
 ## #   min_score &lt;dbl&gt;, max_score &lt;dbl&gt;, val_quota &lt;dbl&gt;,
 ## #   val_placement &lt;dbl&gt;, val_min_score &lt;dbl&gt;, val_max_score &lt;dbl&gt;</code></pre>
+<ol style="list-style-type: decimal">
+<li>Get the highest <code>max_score</code> programs from each <code>exam_type</code>.</li>
+</ol>
 <pre class="r"><code>osym_data_2017%&gt;%
     group_by(exam_type)%&gt;%
       arrange(desc(max_score))%&gt;%
